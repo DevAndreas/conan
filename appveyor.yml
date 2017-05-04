@@ -4,6 +4,10 @@ platform:
 #  - x64
   - x86
 
+configuration:
+#  - Debug
+  - Release
+
 install:
   - cmd: echo "Downloading conan..."
   - cmd: set PATH=%PATH%;%PYTHON%/Scripts/
@@ -12,10 +16,10 @@ install:
   - cmd: conan --version
 
 build_script:
-  - cmd: conan install -s compiler="%COMPILER%" -s compiler.version="%VER%" -s arch="x86" -s build_type="Release"
+  - cmd: conan install -s compiler="%COMPILER%" -s compiler.version="%VER%" -s arch="%PLATFORM%" -s build_type="%CONFIGURATION%"
   - mkdir build && cd build
   - cmake -G "%COMPILER% %VER% %PRODUCT%" ..
-  - cmake --build . --config release
+  - cmake --build . --config "%CONFIGURATION%"
 
 environment:
   matrix:
