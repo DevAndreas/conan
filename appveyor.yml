@@ -22,5 +22,5 @@ environment:
       VER: 14
       PRODUCT: 2015
     - COMPILER: Visual Studio
-      VER: 10
-      PRODUCT: 2010
+      VER: 12
+      PRODUCT: 2013
