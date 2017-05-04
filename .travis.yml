@@ -17,7 +17,7 @@ matrix:
             - g++-4.8
 
     - os: linux
-      env: GCC_VER=5.4
+      env: GCC_VER=5.4.1
       addons:
         apt:
           sources:
