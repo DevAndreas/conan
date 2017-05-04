@@ -1,3 +1,4 @@
+language: cpp
 dist: trusty
 
 script:
@@ -7,6 +8,8 @@ script:
 
 matrix:
   include:
+    - gcc: "4.8"
+      env: CXX=g++-4.8
     - gcc: "4.9"
       env: CXX=g++-4.9
       addons:
