@@ -1,3 +1,16 @@
+os: linux
+language: cpp
+compiler:
+    - gcc
+
+notifications:
+    recipients:
+        - achernov@byterox.com
+    email:
+        on_success: change
+        on_failure: always
+
+
 sudo: required
 dist: trusty
 
