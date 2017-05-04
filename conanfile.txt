@@ -1,0 +1,5 @@
+[requires]
+Boost/1.62.0@lasote/testing
+
+[generators]
+cmake
