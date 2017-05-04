@@ -25,11 +25,9 @@ matrix:
           packages:
             - g++-5
 
-before_script:
-  - conan install .
-
 script:
   - export CXX=$COMPILER
+  - conan install .
   - mkdir build && cd build
   - cmake ..
   - cmake --build .
