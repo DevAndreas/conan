@@ -18,6 +18,8 @@ build_script:
 
 environment:
   matrix:
-    - [COMPILER: Visual Studio, VER: 14, PRODUCT: 2015]
+    - COMPILER: Visual Studio
+      VER: 14
+      PRODUCT: 2015
 #    - TOOLCHAIN_VERSION: Visual Studio 12 2013
 #    - TOOLCHAIN_VERSION: Visual Studio 11 2012
