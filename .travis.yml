@@ -26,10 +26,8 @@ matrix:
             - g++-4.9
 
 script:
-  - echo "COMPILER ${COMPILER}"
-  - echo "COMPILER_VERSION ${COMPILER_VERSION}"
   - export CXX=$COMPILER
-  - conan install --settings compiler=gcc compiler.version=$COMPILER_VERSION .
+  - conan install --settings compiler=gcc,compiler.version=$COMPILER_VERSION .
   - mkdir build && cd build
   - cmake ..
   - cmake --build .
