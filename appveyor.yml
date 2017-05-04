@@ -1,0 +1,12 @@
+build:
+
+build_script:
+  - mkdir build && cd build
+  - cmake -G "%TOOLCHAIN_VERSION%" ..
+  - cmake --build . --config release
+
+enviroment:
+  matrix:
+    TOOLCHAIN_VERSION: Visual Studio 14 2015
+    TOOLCHAIN_VERSION: Visual Studio 12 2013
+    TOOLCHAIN_VERSION: Visual Studio 11 2012
