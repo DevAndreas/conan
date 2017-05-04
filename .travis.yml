@@ -17,13 +17,13 @@ matrix:
             - g++-4.8
 
     - os: linux
-      env: GCC_VER=5
+      env: GCC_VER=5.4
       addons:
         apt:
           sources:
             - ubuntu-toolchain-r-test
           packages:
-            - g++-5
+            - g++-5.4
 
 script:
   - export CXX=g++-$GCC_VER
