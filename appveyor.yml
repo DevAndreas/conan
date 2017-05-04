@@ -11,7 +11,7 @@ install:
   - cmd: conan --version
 
 build_script:
-  - cmd: conan install -s compiler='Visual Studio' -s compiler.version=$VER
+  - cmd: conan install -s compiler='Visual\ Studio' -s compiler.version=$VER
   - mkdir build && cd build
   - cmake -G "%TOOLCHAIN_VERSION%" ..
   - cmake --build . --config release
