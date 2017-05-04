@@ -11,12 +11,6 @@ matrix:
             - ubuntu-toolchain-r-test
           packages:
             - g++-4.9
-      script:
-        - export CXX=g++-4.9
-        - export CC=gcc-4.9
-        - mkdir build && cd build
-        - cmake ..
-        - cmake --build .
 
     - compiler: g++-4.8
       env: CXX=g++-4.8
@@ -26,9 +20,8 @@ matrix:
             - ubuntu-toolchain-r-test
           packages:
             - g++-4.8
-      script:
-        - export CXX=g++-4.9
-        - export CC=gcc-4.9
-        - mkdir build && cd build
-        - cmake ..
-        - cmake --build .
+
+script:
+  - mkdir build && cd build
+  - cmake ..
+  - cmake --build .
