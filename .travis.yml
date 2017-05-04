@@ -10,6 +10,10 @@ matrix:
   include:
     - gcc: "4.8"
       env: CXX=g++-4.8
+      addons:
+        apt:
+          sources:
+            - ubuntu-toolchain-r-test
     - gcc: "4.9"
       env: CXX=g++-4.9
       addons:
