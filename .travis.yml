@@ -1,14 +1,7 @@
-os: linux
 language: cpp
 compiler:
     - gcc
-
-notifications:
-    recipients:
-        - achernov@byterox.com
-    email:
-        on_success: change
-        on_failure: always
+os: linux
 
 script:
     - mkdir build && cd build
