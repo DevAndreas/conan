@@ -27,7 +27,7 @@ matrix:
 
 script:
   - export CXX=$COMPILER
-  - conan -e CXX=$COMPILER install .
+  - conan install --env CXX=$COMPILER .
   - mkdir build && cd build
   - cmake ..
   - cmake --build .
