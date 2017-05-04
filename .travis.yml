@@ -8,7 +8,7 @@ install:
 matrix:
   include:
     - os: linux
-      env: COMPILER=g++-4.8
+      env: [COMPILER=g++-4.8, COMPILER_VERSION=4.8]
       addons:
         apt:
           sources:
@@ -17,7 +17,7 @@ matrix:
             - g++-4.8
 
     - os: linux
-      env: COMPILER=g++-4.9
+      env: [COMPILER=g++-4.9, COMPILER_VERSION=4.9]
       addons:
         apt:
           sources:
@@ -26,8 +26,10 @@ matrix:
             - g++-4.9
 
 script:
+  - echo "COMPILER ${COMPILER}"
+  - echo "COMPILER_VERSION ${COMPILER_VERSION}"
   - export CXX=$COMPILER
-  - conan install --env CXX=$COMPILER .
+  - conan install --settings compiler.version=$COMPILER_VERSION .
   - mkdir build && cd build
   - cmake ..
   - cmake --build .
