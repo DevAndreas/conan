@@ -27,7 +27,7 @@ matrix:
 
 script:
   - export CXX=$COMPILER
-  - conan install --settings compiler=gcc,compiler.version=$COMPILER_VERSION .
+  - conan install -s compiler=gcc -s compiler.version=$COMPILER_VERSION .
   - mkdir build && cd build
   - cmake ..
   - cmake --build .
