@@ -11,7 +11,7 @@ install:
   - cmd: conan --version
 
 build_script:
-  - cmd: conan install .
+  - cmd: conan install -s compiler='Visual Studio' -s compiler.version=$VER
   - mkdir build && cd build
   - cmake -G "%TOOLCHAIN_VERSION%" ..
   - cmake --build . --config release
@@ -19,5 +19,6 @@ build_script:
 environment:
   matrix:
     - TOOLCHAIN_VERSION: Visual Studio 14 2015
+      VER: 14
 #    - TOOLCHAIN_VERSION: Visual Studio 12 2013
 #    - TOOLCHAIN_VERSION: Visual Studio 11 2012
