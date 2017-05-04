@@ -10,24 +10,7 @@ notifications:
         on_success: change
         on_failure: always
 
-
-sudo: required
-dist: trusty
-
 script:
     - mkdir build && cd build
     - cmake ..
     - cmake --build .
-
-matrix:
-    include:
-        - os:
-            linux:
-                addons:
-                    apt:
-                        sources:
-                            - ubuntu-toolchain-r-test
-                        packages:
-                            - g++-4.9
-            env: CXX=g++-4.9
-        
