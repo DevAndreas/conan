@@ -1,3 +1,4 @@
+version: 1.0.{build}
 build:
 platform:
 #  - x64
@@ -11,7 +12,7 @@ install:
   - cmd: conan --version
 
 build_script:
-  - cmd: conan install -s compiler="%COMPILER%" -s compiler.version="%VER%"
+  - cmd: conan install -s compiler="%COMPILER%" -s compiler.version="%VER%" -s arch="x86" -s build_type="Release"
   - mkdir build && cd build
   - cmake -G "%COMPILER% %VER% %PRODUCT%" ..
   - cmake --build . --config release
@@ -22,5 +23,5 @@ environment:
       VER: 14
       PRODUCT: 2015
     - COMPILER: Visual Studio
-      VER: 12
-      PRODUCT: 2013
+      VER: 10
+      PRODUCT: 2010
