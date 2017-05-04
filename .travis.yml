@@ -23,7 +23,7 @@ matrix:
           sources:
             - ubuntu-toolchain-r-test
           packages:
-            - g++-5.4
+            - g++-5
 
 script:
   - export CXX=g++-$GCC_VER
